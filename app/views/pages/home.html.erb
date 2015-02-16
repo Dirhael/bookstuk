@@ -1,0 +1,11 @@
+<div class="jumbotron">
+  <h1>Welcome to BookStuk</h1>
+
+  <p>A digital bookstore</p>
+  <%= link_to 'Books', root_path, class: 'btn btn-primary btn-lg' %>
+  <% if current_user %>
+      <%= link_to 'Logout', destroy_user_session_path, class: 'btn btn-primary btn-lg' %>
+  <% else %>
+      <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+  <% end %>
+</div>
