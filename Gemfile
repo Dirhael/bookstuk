@@ -49,3 +49,5 @@ gem 'font-awesome-rails'
 gem 'cancancan'
 gem 'paperclip'
 
+gem 'dotenv-rails', group: :development
+
