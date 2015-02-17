@@ -12,7 +12,7 @@ class BooksController < ApplicationController
 
   def create
     @book = current_user.books.new(book_params)
-    if @book.save!
+    if @book.save
       redirect_to @book, notice: 'Book successfully updated.'
     else
       render :new
@@ -43,7 +43,7 @@ class BooksController < ApplicationController
 
   private
   def set_book
-    @book = Book.find(params[:id])
+    @book = Book.friendly.find(params[:id])
   end
 
   def book_params
