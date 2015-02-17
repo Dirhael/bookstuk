@@ -21,9 +21,11 @@ class BooksController < ApplicationController
 
 
   def edit
+    authorize! :manage, @book
   end
 
   def update
+    authorize! :manage, @book
     if @book.update(book_params)
       redirect_to @book, notice: 'Book successfully updated.'
     else
@@ -35,6 +37,7 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    authorize! :manage, @book
     @book.destroy
   end
 
