@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action  :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
-  before_action :set_books, only: [:show, :edit, :update, :destroy]
+  before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
     @books = Book.where(availability: true)
@@ -12,8 +12,8 @@ class BooksController < ApplicationController
 
   def create
     @book = current_user.books.new(book_params)
-    if @book.save
-      redirect_to @book, notice: 'Book successfully created.'
+    if @book.save!
+      redirect_to @book, notice: 'Book successfully updated.'
     else
       render :new
     end
@@ -42,7 +42,7 @@ class BooksController < ApplicationController
   end
 
   private
-  def set_books
+  def set_book
     @book = Book.find(params[:id])
   end
 

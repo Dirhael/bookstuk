@@ -7,9 +7,12 @@
     <br>
     <%= f.input :price, required: true, label: false, placeholder: 'Price', input_html: {class: 'form-control'} %>
 
+    <%= f.input :image %>
+    <%= f.input :resource %>
+
     <div class="checkbox text-center">
       <p>Availability</p>
-      <%= f.input :availability, label:false %>G
+      <%= f.input :availability, label:false %>
     </div>
     <%= f.button :submit, class: 'btn btn-primary btn-block' %>
 
