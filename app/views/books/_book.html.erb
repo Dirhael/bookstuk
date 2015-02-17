@@ -1,0 +1,12 @@
+<div class="col-md-3">
+  <div class="thumbnail">
+    <%= link_to book_path(book) do %>
+        <%= image_tag 'rails_book.jpg', class: 'img-responsive' %>
+    <% end %>
+    <div class="caption">
+      <p><strong><%= book.name %></strong></p>
+
+      <p>$<%= book.price %></p>
+    </div>
+  </div>
+</div>
