@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get 'dashboard' => 'pages#dashboard'
+
+  post '/buy/:slug', to: 'transactions#create', as: :buy
+
+  get '/pickup/:guid', to: 'transactions#pickup', as: :pickup
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
