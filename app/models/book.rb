@@ -6,6 +6,8 @@ class Book < ActiveRecord::Base
   belongs_to :user
   has_many :sales
 
+  before_create :update_cents
+
   has_attached_file :image
   has_attached_file :resource
 
@@ -21,5 +23,10 @@ class Book < ActiveRecord::Base
   validates_attachment_presence :image, :resource
 
   validates_numericality_of :price, greater_than: 0.49, message: 'Must be at least 0.50 dollars'
+
+  private
+  def update_cents
+    self.cents = self.price*100
+  end
 
 end
