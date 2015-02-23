@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Bookstuk
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    = render 'layouts/header'
+  %body
+    .container
+      - flash.each do |type, message|
+        .alert.alert-info.fade-in
+          %button.close{"data-dismiss" => "alert"} x
+          = message
+      = yield

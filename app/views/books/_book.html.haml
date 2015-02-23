@@ -1,0 +1,9 @@
+.col-md-3
+  .thumbnail
+    = link_to book_path(book) do
+      = image_tag book.image.url(:original), class: 'img-responsive'
+    .caption
+      %p
+        %strong= book.name
+      %p
+        $#{book.price}

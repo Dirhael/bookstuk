@@ -1,0 +1,14 @@
+%table.table.table-condensed
+  %thead
+    %tr
+      %th Name
+      %th Author
+      %th Price
+      %th Availability
+  - @books.each do |book|
+    %tr
+      %td= link_to book.name, book_path(book)
+      %td= book.author
+      %td= book.price
+      %td= book.availability
+      %td= link_to 'Edit', edit_book_path(book)
