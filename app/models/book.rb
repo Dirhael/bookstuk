@@ -24,6 +24,8 @@ class Book < ActiveRecord::Base
 
   validates_numericality_of :price, greater_than: 0.49, message: 'Must be at least 0.50 dollars'
 
+  validates_presence_of :name, :author
+
   private
   def update_cents
     self.cents = self.price*100
