@@ -20,6 +20,16 @@ RSpec.describe User, type: :model do
     end
   end
 
+  context 'valid user with books' do
+    before do
+      @user = FactoryGirl.create(:user_with_books)
+    end
+
+    it 'should have some books' do
+      expect(@user.books.count).not_to eq(0)
+    end
+  end
+
   context 'invalid user' do
     before do
       @user = FactoryGirl.build(:invalid_user)

@@ -10,16 +10,16 @@ FactoryGirl.define do
     created_at {Faker::Date.birthday(23,24)}
     updated_at {Faker::Date.birthday(23,24)}
     user
-  end
 
-  factory :invalid_book, parent: :book do
-    name nil
-    author nil
-    description nil
-    price 0.03
-    user nil
-    resource nil
-    image nil
+    factory :invalid_book do
+      name nil
+      author nil
+      description nil
+      price 0.03
+      user nil
+      resource nil
+      image nil
+    end
   end
 
 end
